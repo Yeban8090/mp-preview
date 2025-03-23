@@ -7,7 +7,7 @@
 }
 
 /* 工具栏基础样式 */
-.mp-toolbar, .mp-bottom-bar {
+.mp-bottom-bar {
     padding: 20px 32px;
     position: sticky;
     border-radius: 6px;
@@ -15,18 +15,6 @@
     display: flex;
     align-items: center;
     min-width: 680px;
-}
-
-.mp-toolbar {
-    top: 0;
-    background: rgba(82, 144, 220, 0.03);
-    border-bottom: 1px solid rgba(82, 144, 220, 0.1);
-}
-
-.mp-bottom-bar {
-    bottom: 0;
-    background: rgba(82, 144, 220, 0.02);
-    border-top: 1px solid rgba(82, 144, 220, 0.1);
 }
 
 /* 控件组布局 */
@@ -73,29 +61,29 @@
 .custom-select {
     height: 32px;
     padding: 0 12px;
-    border: 1px solid #5C5F77;
+    border: 1px solid var(--text-muted);
     border-radius: 8px;
-    background: white;
+    background: var(--background-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease;
-    color: #5C5F77;
-    box-shadow: 0 1px 3px rgba(82, 144, 220, 0.1);
+    color: var(--text-muted);
+    box-shadow: 0 1px 3px var(--background-modifier-box-shadow);
 }
 
 .custom-select:hover {
-    background: #f5f8fc;
-    box-shadow: 0 2px 6px rgba(82, 144, 220, 0.15);
+    background: var(--background-secondary);
+    box-shadow: 0 2px 6px var(--background-modifier-box-shadow);
 }
 
 .custom-select.disabled {
     opacity: 0.5;
-    background: #f5f5f5 !important;
-    color: #999 !important;
-    border-color: #e8e8e8 !important;
+    background: var(--background-secondary) !important;
+    color: var(--text-faint) !important;
+    border-color: var(--background-modifier-border) !important;
     cursor: not-allowed;
     box-shadow: none;
 }
@@ -181,8 +169,8 @@
     padding: 0;
     margin: 0;
     border: none;
-    background: transparent;
-    color: #5C5F77;
+    background: var(--background-primary);
+    color: var(--text-normal);
     outline: none;
 }
 

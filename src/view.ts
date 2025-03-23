@@ -51,7 +51,7 @@ export class MPView extends ItemView {
         container.classList.remove('view-content');
         container.classList.add('mp-view-content');
         
-        const toolbar = container.createEl('div', { cls: 'mp-toolbar' });
+        const toolbar = container.createEl('div', { cls: 'mp-bottom-bar' });
         
         // 锁定按钮
         this.lockButton = toolbar.createEl('button', {
@@ -274,7 +274,10 @@ export class MPView extends ItemView {
         
         // 请作者喝咖啡按钮
         const likeButton = bottomControlsGroup.createEl('button', { 
-            cls: 'mp-like-button'
+            cls: ['mp-like-button', 'mod-cta'],
+            attr: {
+            style: 'background-color: var(--interactive-accent-hover); color: var(--text-on-accent);'
+            }
         });
         const heartSpan = likeButton.createEl('span', {
             text: '❤️',

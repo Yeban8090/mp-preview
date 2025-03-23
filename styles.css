@@ -26,6 +26,8 @@
     width: fit-content;
     min-width: fit-content;
     margin-left: 40px;
+    flex-wrap: wrap; /* Add flex-wrap to allow wrapping when space is tight */
+    padding: 5px 0; /* Add some padding to prevent items from touching when wrapped */
 }
 
 /* 锁定按钮 */
@@ -55,7 +57,9 @@
 /* 下拉选择器 */
 .custom-select-container {
     position: relative;
-    width: 120px;
+    width: fit-content;
+    /* min-width: 120px; */
+    margin-right: 8px;
 }
 
 .custom-select {
@@ -72,6 +76,8 @@
     transition: all 0.2s ease;
     color: var(--text-muted);
     box-shadow: 0 1px 3px var(--background-modifier-box-shadow);
+    width: fit-content;
+    min-width: min-content;
 }
 
 .custom-select:hover {
@@ -136,7 +142,7 @@
     align-items: center;
     justify-content: space-between;
     height: 32px;
-    background: white;
+    background: var(--background-primary);
     border: 1px solid #5C5F77;
     border-radius: 8px;
     padding: 0;
@@ -241,30 +247,6 @@
 .mp-help-button:hover + .mp-help-tooltip {
     display: block;
 }
-/* 底部按钮 */
-.mp-bottom-controls-group button {
-    padding: 8px 24px;
-    width: 164px;
-    height: 36px;
-    border-radius: 8px;
-    border: 1px solid #5C5F77;
-    background: white;
-    color: #5C5F77;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 1px 3px rgba(82, 144, 220, 0.1);
-}
-
-.mp-bottom-controls-group button:hover {
-    background: rgba(82, 144, 220, 0.05);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(82, 144, 220, 0.2);
-}
 
 .mp-copy-button:not(:disabled) {
     background: #5290DC !important;
@@ -286,15 +268,6 @@
     cursor: not-allowed !important;
 }
 
-.mp-bottom-controls-group button:disabled {
-    opacity: 0.5;
-    background: white !important;
-    color: #5C5F77 !important;
-    cursor: not-allowed !important;
-    transform: none;
-    border-color: #5C5F77 !important;
-    box-shadow: none;
-}
 /* 关于作者的框 */
 .mp-donate-overlay {
     position: fixed;
@@ -350,7 +323,7 @@
     right: 7px;
     width: 28px;
     height: 28px;
-    background: transparent;
+    background: var(--background-secondary);
     border: none;
     border-radius: 6px;
     font-size: 17px;

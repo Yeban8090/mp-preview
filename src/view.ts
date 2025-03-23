@@ -135,7 +135,7 @@ export class MPView extends ItemView {
             type: 'text',
             value: '16',
             attr: {
-                style: 'border: none; outline: none; background: transparent;'
+            style: 'border: none; outline: none; background: var(--background-primary);'
             }
         });
         const increaseButton = fontSizeGroup.createEl('button', { 

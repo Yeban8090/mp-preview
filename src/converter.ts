@@ -19,6 +19,118 @@ export class MPConverter {
 
         // 处理元素
         this.processElements(section);
+
+        // 将外部链接转换为文献引用（适配公众号不允许外链）
+        this.convertExternalLinksToReferences(section);
+    }
+
+    private static isExternalHttpUrl(href: string): boolean {
+        const trimmed = href.trim();
+        return trimmed.startsWith('http://') || trimmed.startsWith('https://');
+    }
+
+    private static normalizeUrl(url: string): string {
+        return url.trim();
+    }
+
+    private static convertExternalLinksToReferences(container: HTMLElement): void {
+        if (!container) return;
+        // Map: normalized url -> ref index
+        const refIndexByUrl = new Map<string, number>();
+        const refLabelByIndex = new Map<number, string>();
+        const firstCiteAnchorByIndex = new Map<number, string>();
+        const citeCountByIndex = new Map<number, number>();
+
+        const anchors = Array.from(container.querySelectorAll('a[href]')) as HTMLAnchorElement[];
+        let nextRefIndex = 1;
+
+        for (const a of anchors) {
+            const href = a.getAttribute('href');
+            if (!href || !this.isExternalHttpUrl(href)) continue;
+            const parent = a.parentNode;
+            if (!parent) continue;
+
+            const url = this.normalizeUrl(href);
+            let refIndex = refIndexByUrl.get(url);
+            if (!refIndex) {
+                refIndex = nextRefIndex++;
+                refIndexByUrl.set(url, refIndex);
+                // 用首次出现的链接文本作为 label（为空则稍后回退到 url）
+                const label = (a.textContent || '').trim();
+                if (label) refLabelByIndex.set(refIndex, label);
+            }
+
+            const citeCount = (citeCountByIndex.get(refIndex) || 0) + 1;
+            citeCountByIndex.set(refIndex, citeCount);
+            const citeAnchorName = `mp-cite-${refIndex}-${citeCount}`;
+            if (!firstCiteAnchorByIndex.has(refIndex)) {
+                firstCiteAnchorByIndex.set(refIndex, citeAnchorName);
+            }
+
+            // 将 <a href="https://...">text</a>
+            // 转换为：text<sup><a name="..."/> <a href="#mp-ref-N">[N]</a> <a href="#mp-ref-N">goto</a></sup>
+            const replacement = document.createElement('span');
+            while (a.firstChild) {
+                replacement.appendChild(a.firstChild);
+            }
+
+            const sup = document.createElement('sup');
+
+            const citeAnchor = document.createElement('a');
+            citeAnchor.setAttribute('name', citeAnchorName);
+            sup.appendChild(citeAnchor);
+
+            const gotoRef1 = document.createElement('a');
+            gotoRef1.setAttribute('href', `#mp-ref-${refIndex}`);
+            gotoRef1.textContent = `[${refIndex}]`;
+            sup.appendChild(gotoRef1);
+
+            // Avoid Node.replaceWith for maximum compatibility.
+            const fragment = document.createDocumentFragment();
+            fragment.appendChild(replacement);
+            fragment.appendChild(sup);
+            parent.insertBefore(fragment, a);
+            parent.removeChild(a);
+        }
+
+        if (refIndexByUrl.size === 0) return;
+
+        // 追加参考文献区
+        const refsHeading = document.createElement('h2');
+        refsHeading.textContent = 'References';
+
+        const refsList = document.createElement('ol');
+
+        // 按 refIndex 顺序输出
+        const urlByIndex: Array<{ index: number; url: string }> = [];
+        for (const [url, index] of refIndexByUrl.entries()) {
+            urlByIndex.push({ index, url });
+        }
+        urlByIndex.sort((a, b) => a.index - b.index);
+
+        for (const { index, url } of urlByIndex) {
+            const li = document.createElement('li');
+
+            const refAnchor = document.createElement('a');
+            refAnchor.setAttribute('name', `mp-ref-${index}`);
+            li.appendChild(refAnchor);
+
+            const label = refLabelByIndex.get(index) || url;
+            li.appendChild(document.createTextNode(`${label} — ${url} `));
+
+            const backTo = firstCiteAnchorByIndex.get(index);
+            if (backTo) {
+                const backLink = document.createElement('a');
+                backLink.setAttribute('href', `#${backTo}`);
+                backLink.textContent = '↩︎';
+                li.appendChild(backLink);
+            }
+
+            refsList.appendChild(li);
+        }
+
+        container.appendChild(refsHeading);
+        container.appendChild(refsList);
     }
 
     private static processElements(container: HTMLElement | null): void {

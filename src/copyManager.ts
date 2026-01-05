@@ -1,6 +1,36 @@
 import { Notice } from 'obsidian';
 
 export class CopyManager {
+    private static preserveWhitespaceInCodeBlocks(container: HTMLElement): void {
+        // WeChat editor may not keep <pre> default whitespace behavior after paste.
+        // Convert spaces/tabs in code blocks to NBSP so indentation survives.
+        const codeContainers = Array.from(container.querySelectorAll('pre, pre code')) as HTMLElement[];
+        if (codeContainers.length === 0) return;
+
+        const tabReplacement = '\u00A0\u00A0\u00A0\u00A0';
+
+        const walk = (node: Node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.nodeValue;
+                if (!text) return;
+                // Preserve newlines; only adjust spaces/tabs.
+                const converted = text
+                    .replace(/\t/g, tabReplacement)
+                    .replace(/ /g, '\u00A0');
+                if (converted !== text) node.nodeValue = converted;
+                return;
+            }
+
+            for (const child of Array.from(node.childNodes)) {
+                walk(child);
+            }
+        };
+
+        for (const el of codeContainers) {
+            walk(el);
+        }
+    }
+
     private static cleanupHtml(element: HTMLElement): string {
         // 创建克隆以避免修改原始元素
         const clone = element.cloneNode(true) as HTMLElement;
@@ -61,6 +91,9 @@ export class CopyManager {
             if (!contentSection) {
                 throw new Error('找不到内容区域');
             }
+
+            this.preserveWhitespaceInCodeBlocks(contentSection as HTMLElement);
+
             // 使用新的 cleanupHtml 方法
             const cleanHtml = this.cleanupHtml(contentSection as HTMLElement);
 

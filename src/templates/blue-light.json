@@ -1,0 +1,67 @@
+{
+    "id": "blue-light",
+    "name": "科技蓝调",
+    "description": "基于深色主题的蓝调风格",
+    "styles": {
+        "container": "",
+        "title": {
+            "h1": {
+                "base": "margin: 32px 0 0; font-size: 88px; letter-spacing: -0.03em; line-height: 1.5;",
+                "content": "font-weight: 700; color: rgba(0, 61, 165, 0.20);",
+                "after": ""
+            },
+            "h2": {
+                "base": "margin: 28px 0 0; font-size: 24px; letter-spacing: -0.02em; border-left: 4px solid rgb(0, 61, 165); padding-left: 12px; line-height: 1.5;",
+                "content": "font-weight: 700; color: rgba(0, 61, 165, 0.85);",
+                "after": ""
+            },
+            "h3": {
+                "base": "margin: 24px 0 0; font-size: 18.4px; letter-spacing: -0.01em; line-height: 1.5;",
+                "content": "font-weight: 600; color: rgb(0, 61, 165);",
+                "after": ""
+            },
+            "base": {
+                "base": "margin: 20px 0 0; font-size: 1.1em; line-height: 1.5;",
+                "content": "font-weight: 600; color: rgb(0, 61, 165);",
+                "after": ""
+            }
+        },
+        "paragraph": "line-height: 1.8; margin-top: 1em; font-size: 1em; color: rgb(74, 85, 104);",
+        "list": {
+            "container": "padding-left: 32px; color: rgb(74, 85, 104);",
+            "item": "font-size: 1em; color: rgb(74, 85, 104); line-height: 1.8;",
+            "taskList": "list-style: none; font-size: 1em; color: rgb(74, 85, 104); line-height: 1.8;"
+        },
+        "code": {
+            "header": {
+                "container": "margin-bottom: 1em; display: flex; gap: 6px;",
+                "dot": "width: 12px; height: 12px; border-radius: 50%;",
+                "colors": [
+                    "#ff5f56",
+                    "#ffbd2e",
+                    "#27c93f"
+                ]
+            },
+            "block": "color: #333; background: #F8FBFF; border-radius: 8px; border: 1px solid #E6F0FF; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 1.2em 0; padding: 1em 1em 1em; font-size: 14px; line-height: 1.6; white-space: pre-wrap;",
+            "inline": "background: #F8FBFF; padding: 2px 6px; border-radius: 4px; color: #333; font-size: 14px; border: 1px solid #E6F0FF;"
+        },
+        "quote": "border-left: 4px solid #2c3e50; border-radius: 6px; padding: 10px 10px; background: #f8f9fa; margin: 0.8em 0; color: rgb(74, 85, 104); font-style: italic; word-wrap: break-word;",
+        "image": "max-width: 100%; height: auto; margin: 1em auto; display: block;",
+        "link": "color: rgb(215, 130, 126); text-decoration: none; border-bottom: 1px solid rgb(215, 130, 126); transition: all 0.2s ease;",
+        "emphasis": {
+            "strong": "font-weight: bold; color: rgb(0, 61, 165);",
+            "em": "font-style: italic; color: rgb(74, 85, 104);",
+            "del": "text-decoration: line-through; color: rgb(74, 85, 104);"
+        },
+        "table": {
+            "container": "width: 100%; margin: 1em 0; border-collapse: collapse; border: 1px solid rgba(0, 61, 165, 0.2);",
+            "header": "background: rgba(0, 61, 165, 0.05); font-weight: bold; color: rgb(74, 85, 104); border-bottom: 2px solid rgba(0, 61, 165, 0.2); font-size: 1em;",
+            "cell": "border: 1px solid rgba(0, 61, 165, 0.1); padding: 8px; color: rgb(74, 85, 104); font-size: 1em;"
+        },
+        "hr": "border: none; border-top: 1px solid rgba(0, 61, 165, 0.2); margin: 20px 0;",
+        "footnote": {
+            "ref": "color: rgb(215, 130, 126); text-decoration: none; font-size: 0.9em;",
+            "backref": "color: rgb(215, 130, 126); text-decoration: none; font-size: 0.9em;"
+        }
+    }
+}

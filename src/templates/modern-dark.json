@@ -1,0 +1,67 @@
+{
+    "id": "modern-dark",
+    "name": "现代科技",
+    "description": "科技感现代风格，深色标题配绿色强调和黄色高亮",
+    "styles": {
+        "container": "",
+        "title": {
+            "h1": {
+                "base": "margin: 32px 0 24px; font-size: 38px; letter-spacing: -0.02em; line-height: 1.1;",
+                "content": "font-weight: 900; color: rgb(17, 24, 39);",
+                "after": ""
+            },
+            "h2": {
+                "base": "margin: 24px 0 16px; font-size: 22px; letter-spacing: -0.01em; line-height: 1.4;",
+                "content": "font-weight: 800; color: rgb(17, 24, 39);",
+                "after": ""
+            },
+            "h3": {
+                "base": "margin: 20px 0 12px; font-size: 18px; line-height: 1.5;",
+                "content": "font-weight: 700; color: rgb(17, 24, 39);",
+                "after": ""
+            },
+            "base": {
+                "base": "margin: 16px 0 8px; font-size: 15px; line-height: 1.5;",
+                "content": "font-weight: 700; color: rgb(17, 24, 39);",
+                "after": ""
+            }
+        },
+        "paragraph": "line-height: 1.8; margin-top: 0; margin-bottom: 16px; font-size: 15px; color: rgb(75, 85, 99);",
+        "list": {
+            "container": "padding-left: 24px; color: rgb(75, 85, 99);",
+            "item": "font-size: 15px; color: rgb(75, 85, 99); line-height: 1.8; margin-bottom: 12px;",
+            "taskList": "list-style: none; font-size: 15px; color: rgb(75, 85, 99); line-height: 1.8;"
+        },
+        "code": {
+            "header": {
+                "container": "margin-bottom: 1em; display: flex; gap: 6px;",
+                "dot": "width: 12px; height: 12px; border-radius: 50%;",
+                "colors": [
+                    "#ff5f56",
+                    "#ffbd2e",
+                    "#27c93f"
+                ]
+            },
+            "block": "color: #e5e7eb; background: rgb(31, 41, 55); border-radius: 12px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1.2em 0; padding: 1.2em; font-size: 14px; line-height: 1.6; white-space: pre-wrap;",
+            "inline": "background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 4px; color: rgb(16, 185, 129); font-size: 14px; border: none;"
+        },
+        "quote": "border-left: 4px solid rgb(251, 191, 36); border-radius: 0; padding: 12px 16px; background: rgba(251, 191, 36, 0.08); margin: 1em 0; color: rgb(16, 185, 129); font-style: normal; word-wrap: break-word;",
+        "image": "max-width: 100%; height: auto; margin: 1.2em auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);",
+        "link": "color: rgb(16, 185, 129); text-decoration: none; border-bottom: 2px solid rgb(16, 185, 129); transition: all 0.2s ease;",
+        "emphasis": {
+            "strong": "font-weight: 700; color: rgb(17, 24, 39); background: rgba(251, 191, 36, 0.3); padding: 1px 4px;",
+            "em": "font-style: italic; color: rgb(75, 85, 99);",
+            "del": "text-decoration: line-through; color: rgb(156, 163, 175);"
+        },
+        "table": {
+            "container": "width: 100%; margin: 1em 0; border-collapse: collapse; border: 1px solid rgb(229, 231, 235); border-radius: 8px; overflow: hidden;",
+            "header": "background: rgb(243, 244, 246); font-weight: bold; color: rgb(17, 24, 39); border-bottom: 2px solid rgb(229, 231, 235); font-size: 1em;",
+            "cell": "border: 1px solid rgb(229, 231, 235); padding: 12px; color: rgb(75, 85, 99); font-size: 1em;"
+        },
+        "hr": "border: none; border-top: 1px solid rgb(229, 231, 235); margin: 24px 0;",
+        "footnote": {
+            "ref": "color: rgb(16, 185, 129); text-decoration: none; font-size: 0.9em;",
+            "backref": "color: rgb(16, 185, 129); text-decoration: none; font-size: 0.9em;"
+        }
+    }
+}

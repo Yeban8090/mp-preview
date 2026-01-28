@@ -49,13 +49,36 @@ export class SettingsManager {
         if (!savedData) {
             savedData = {};
         }
+        // 总是从模板文件加载预设模板，确保新模板能同步
+        const { templates } = await import('../templates');
+        const presetTemplates = Object.values(templates).map((template: any) => ({
+            ...template,
+            isPreset: true,
+            isVisible: true
+        }));
         if (!savedData.templates || savedData.templates.length === 0) {
-            const { templates } = await import('../templates');
-            savedData.templates = Object.values(templates).map(template => ({
-                ...template,
-                isPreset: true,
-                isVisible: true  // 默认可见
-            }));
+            savedData.templates = presetTemplates;
+        } else {
+            // 合并新的预设模板，并同步更新已有预设模板的名称和样式
+            const presetMap = new Map(presetTemplates.map((t: any) => [t.id, t]));
+            savedData.templates = savedData.templates.map((t: any) => {
+                if (t.isPreset && presetMap.has(t.id)) {
+                    const preset = presetMap.get(t.id);
+                    return {
+                        ...preset,
+                        isPreset: true,
+                        isVisible: t.isVisible // 保留用户的可见性设置
+                    };
+                }
+                return t;
+            });
+            // 添加新的预设模板
+            const existingIds = new Set(savedData.templates.map((t: any) => t.id));
+            for (const preset of presetTemplates) {
+                if (!existingIds.has(preset.id)) {
+                    savedData.templates.push(preset);
+                }
+            }
         }
         if (!savedData.customTemplates) {
             savedData.customTemplates = [];

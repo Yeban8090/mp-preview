@@ -1,0 +1,63 @@
+{
+    "id": "cyber-neon",
+    "name": "赛博霓虹",
+    "description": "赛博朋克风格，高对比度，霓虹荧光色点缀",
+    "styles": {
+        "container": "",
+        "title": {
+            "h1": {
+                "base": "margin: 32px 0 16px; font-size: 2.4em; letter-spacing: 0.1em; line-height: 1.2; text-transform: uppercase;",
+                "content": "font-weight: 900; color: #f0abfc; text-shadow: 0 0 10px rgba(240, 171, 252, 0.5);",
+                "after": ""
+            },
+            "h2": {
+                "base": "margin: 28px 0 12px; font-size: 1.5em; letter-spacing: 0.08em; line-height: 1.4;",
+                "content": "font-weight: 700; color: #22d3ee; text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);",
+                "after": ""
+            },
+            "h3": {
+                "base": "margin: 24px 0 10px; font-size: 1.25em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #a78bfa;",
+                "after": ""
+            },
+            "base": {
+                "base": "margin: 20px 0 8px; font-size: 1.1em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #c4b5fd;",
+                "after": ""
+            }
+        },
+        "paragraph": "line-height: 1.8; margin-top: 0; margin-bottom: 20px; font-size: 1em; color: #d1d5db;",
+        "list": {
+            "container": "padding-left: 28px; color: #d1d5db;",
+            "item": "font-size: 1em; color: #d1d5db; line-height: 1.8; margin-bottom: 12px;",
+            "taskList": "list-style: none; font-size: 1em; color: #d1d5db; line-height: 1.8;"
+        },
+        "code": {
+            "header": {
+                "container": "margin-bottom: 1em; display: flex; gap: 6px;",
+                "dot": "width: 12px; height: 12px; border-radius: 50%;",
+                "colors": ["#f0abfc", "#22d3ee", "#a78bfa"]
+            },
+            "block": "color: #22d3ee; background: #0f172a; border-radius: 8px; border: 1px solid #22d3ee; box-shadow: 0 0 20px rgba(34, 211, 238, 0.15), inset 0 0 20px rgba(34, 211, 238, 0.05); margin: 1.2em 0; padding: 1.2em; font-size: 14px; line-height: 1.6; white-space: pre-wrap;",
+            "inline": "background: rgba(167, 139, 250, 0.2); padding: 2px 8px; border-radius: 4px; color: #c4b5fd; font-size: 14px; border: 1px solid rgba(167, 139, 250, 0.3);"
+        },
+        "quote": "border-left: 4px solid #f0abfc; border-radius: 0 8px 8px 0; padding: 16px 20px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(88, 28, 135, 0.2) 100%); margin: 1.2em 0; color: #e9d5ff; font-style: normal; word-wrap: break-word; box-shadow: 0 0 15px rgba(240, 171, 252, 0.1);",
+        "image": "max-width: 100%; height: auto; margin: 1.5em auto; display: block; border-radius: 8px; border: 2px solid #22d3ee; box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);",
+        "link": "color: #22d3ee; text-decoration: none; border-bottom: 2px solid #22d3ee; text-shadow: 0 0 5px rgba(34, 211, 238, 0.5); transition: all 0.2s ease;",
+        "emphasis": {
+            "strong": "font-weight: 700; color: #f0abfc; text-shadow: 0 0 5px rgba(240, 171, 252, 0.4);",
+            "em": "font-style: italic; color: #c4b5fd;",
+            "del": "text-decoration: line-through; color: #6b7280;"
+        },
+        "table": {
+            "container": "width: 100%; margin: 1.2em 0; border-collapse: collapse; border: 1px solid #22d3ee; border-radius: 8px; overflow: hidden;",
+            "header": "background: rgba(34, 211, 238, 0.15); font-weight: bold; color: #22d3ee; font-size: 1em; padding: 12px; border-bottom: 2px solid #22d3ee;",
+            "cell": "border: 1px solid rgba(34, 211, 238, 0.3); padding: 12px; color: #d1d5db; font-size: 1em;"
+        },
+        "hr": "border: none; height: 2px; background: linear-gradient(90deg, #f0abfc, #22d3ee, #a78bfa); margin: 32px 0; box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);",
+        "footnote": {
+            "ref": "color: #22d3ee; text-decoration: none; font-size: 0.85em; vertical-align: super;",
+            "backref": "color: #22d3ee; text-decoration: none; font-size: 0.85em;"
+        }
+    }
+}

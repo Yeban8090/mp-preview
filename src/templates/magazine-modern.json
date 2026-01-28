@@ -1,0 +1,63 @@
+{
+    "id": "magazine-modern",
+    "name": "现代杂志",
+    "description": "现代编辑风格，主题蓝点缀，简洁专业，科技感",
+    "styles": {
+        "container": "",
+        "title": {
+            "h1": {
+                "base": "margin: 32px 0 16px; font-size: 2.5em; letter-spacing: -0.02em; line-height: 1.2; position: relative; padding-left: 20px;",
+                "content": "font-weight: 700; color: #1f2937; border-left: 6px solid #3B82F6; padding-left: 16px;",
+                "after": ""
+            },
+            "h2": {
+                "base": "margin: 28px 0 12px; font-size: 1.5em; line-height: 1.4;",
+                "content": "font-weight: 700; color: #3B82F6;",
+                "after": ""
+            },
+            "h3": {
+                "base": "margin: 24px 0 10px; font-size: 1.25em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #10B981;",
+                "after": ""
+            },
+            "base": {
+                "base": "margin: 20px 0 8px; font-size: 1.1em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #374151;",
+                "after": ""
+            }
+        },
+        "paragraph": "line-height: 1.8; margin-top: 0; margin-bottom: 24px; font-size: 1em; color: #4b5563; letter-spacing: 0.05em;",
+        "list": {
+            "container": "padding-left: 0; color: #4b5563; list-style: none;",
+            "item": "font-size: 1em; color: #4b5563; line-height: 1.8; margin-bottom: 16px; padding-left: 40px; position: relative;",
+            "taskList": "list-style: none; font-size: 1em; color: #4b5563; line-height: 1.8;"
+        },
+        "code": {
+            "header": {
+                "container": "margin-bottom: 1em; display: flex; gap: 6px;",
+                "dot": "width: 12px; height: 12px; border-radius: 50%;",
+                "colors": ["#ff5f56", "#ffbd2e", "#27c93f"]
+            },
+            "block": "color: #1f2937; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3B82F6; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin: 1.2em 0; padding: 1.2em; font-size: 14px; line-height: 1.7; white-space: pre-wrap;",
+            "inline": "background: #EFF6FF; padding: 3px 8px; border-radius: 4px; color: #1E40AF; font-size: 14px; border: none;"
+        },
+        "quote": "border-left: 4px solid #3B82F6; border-radius: 0 8px 8px 0; padding: 16px 20px; background: linear-gradient(135deg, #f8fafc 0%, #EFF6FF 100%); margin: 1.2em 0; color: #374151; font-style: italic; word-wrap: break-word;",
+        "image": "max-width: 100%; height: auto; margin: 1.5em auto; display: block; border-radius: 8px; border: 2px solid rgba(59, 130, 246, 0.3); padding: 4px;",
+        "link": "color: #3B82F6; text-decoration: none; border-bottom: 2px solid #3B82F6; transition: all 0.2s ease;",
+        "emphasis": {
+            "strong": "font-weight: 700; color: #1E40AF;",
+            "em": "font-style: italic; color: #4b5563; background: linear-gradient(180deg, transparent 60%, #FEF3C7 60%);",
+            "del": "text-decoration: line-through; color: #9ca3af;"
+        },
+        "table": {
+            "container": "width: 100%; margin: 1.2em 0; border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);",
+            "header": "background: #3B82F6; font-weight: bold; color: #ffffff; font-size: 1em; padding: 12px;",
+            "cell": "border: 1px solid #e5e7eb; padding: 12px; color: #4b5563; font-size: 1em;"
+        },
+        "hr": "border: none; height: 1px; background: linear-gradient(90deg, transparent, #3B82F6, transparent); margin: 32px 0;",
+        "footnote": {
+            "ref": "color: #3B82F6; text-decoration: none; font-size: 0.85em; vertical-align: super;",
+            "backref": "color: #3B82F6; text-decoration: none; font-size: 0.85em;"
+        }
+    }
+}

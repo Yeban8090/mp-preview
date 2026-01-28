@@ -10,6 +10,13 @@ const yebanTemplate = require('./yeban.json');
 const yebanOrangeTemplate = require('./yeban-orange.json');
 const darkgreenTemplate = require('./darkgreen.json');
 const brownTemplate = require('./brown.json');
+const blueLightTemplate = require('./blue-light.json');
+const orangeVitalityTemplate = require('./orange-vitality.json');
+const modernDarkTemplate = require('./modern-dark.json');
+const magazineModernTemplate = require('./magazine-modern.json');
+const literaryJournalTemplate = require('./literary-journal.json');
+const cyberNeonTemplate = require('./cyber-neon.json');
+const forestGreenTemplate = require('./forest-green.json');
 
 export const templates = {
     default: defaultTemplate,
@@ -23,4 +30,10 @@ export const templates = {
     'yeban-orange': yebanOrangeTemplate,
     darkgreen: darkgreenTemplate,
     brown: brownTemplate,
+    'blue-light': blueLightTemplate,
+    'orange-vitality': orangeVitalityTemplate,
+    'modern-dark': modernDarkTemplate,
+    'magazine-modern': magazineModernTemplate,
+    'literary-journal': literaryJournalTemplate,
+    'forest-green': forestGreenTemplate,
 };

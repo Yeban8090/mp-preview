@@ -1,0 +1,63 @@
+{
+    "id": "literary-journal",
+    "name": "文艺期刊",
+    "description": "典雅复古，书卷气息，适合人文类内容",
+    "styles": {
+        "container": "",
+        "title": {
+            "h1": {
+                "base": "margin: 40px 0 20px; font-size: 2.2em; letter-spacing: 0.08em; line-height: 1.4; text-align: center;",
+                "content": "font-weight: 700; color: #44403c;",
+                "after": ""
+            },
+            "h2": {
+                "base": "margin: 32px 0 16px; font-size: 1.4em; letter-spacing: 0.05em; line-height: 1.5; border-bottom: 1px solid #d6d3d1; padding-bottom: 8px;",
+                "content": "font-weight: 600; color: #78716c;",
+                "after": ""
+            },
+            "h3": {
+                "base": "margin: 24px 0 12px; font-size: 1.2em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #a8a29e;",
+                "after": ""
+            },
+            "base": {
+                "base": "margin: 20px 0 10px; font-size: 1.1em; line-height: 1.5;",
+                "content": "font-weight: 600; color: #78716c;",
+                "after": ""
+            }
+        },
+        "paragraph": "line-height: 2; margin-top: 0; margin-bottom: 24px; font-size: 1em; color: #57534e; letter-spacing: 0.02em; text-indent: 2em;",
+        "list": {
+            "container": "padding-left: 32px; color: #57534e;",
+            "item": "font-size: 1em; color: #57534e; line-height: 2; margin-bottom: 12px;",
+            "taskList": "list-style: none; font-size: 1em; color: #57534e; line-height: 2;"
+        },
+        "code": {
+            "header": {
+                "container": "margin-bottom: 1em; display: flex; gap: 6px;",
+                "dot": "width: 12px; height: 12px; border-radius: 50%;",
+                "colors": ["#a8a29e", "#d6d3d1", "#78716c"]
+            },
+            "block": "color: #44403c; background: #fafaf9; border-radius: 4px; border: 1px solid #e7e5e4; margin: 1.2em 0; padding: 1.2em; font-size: 14px; line-height: 1.7; white-space: pre-wrap;",
+            "inline": "background: #fafaf9; padding: 2px 6px; border-radius: 3px; color: #78716c; font-size: 14px; border: 1px solid #e7e5e4;"
+        },
+        "quote": "border-left: 3px solid #78716c; padding: 20px 24px; background: #fafaf9; margin: 1.5em 2em; color: #57534e; font-style: italic; word-wrap: break-word; position: relative;",
+        "image": "max-width: 90%; height: auto; margin: 2em auto; display: block; border-radius: 2px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);",
+        "link": "color: #78716c; text-decoration: none; border-bottom: 1px dashed #a8a29e; transition: all 0.2s ease;",
+        "emphasis": {
+            "strong": "font-weight: 700; color: #44403c;",
+            "em": "font-style: italic; color: #78716c;",
+            "del": "text-decoration: line-through; color: #a8a29e;"
+        },
+        "table": {
+            "container": "width: 90%; margin: 1.5em auto; border-collapse: collapse;",
+            "header": "background: #fafaf9; font-weight: 600; color: #44403c; border-bottom: 2px solid #78716c; font-size: 1em; padding: 12px;",
+            "cell": "border-bottom: 1px solid #e7e5e4; padding: 12px; color: #57534e; font-size: 1em;"
+        },
+        "hr": "border: none; height: 0; border-top: 1px solid #d6d3d1; margin: 40px auto; width: 60%;",
+        "footnote": {
+            "ref": "color: #78716c; text-decoration: none; font-size: 0.85em; vertical-align: super;",
+            "backref": "color: #78716c; text-decoration: none; font-size: 0.85em;"
+        }
+    }
+}

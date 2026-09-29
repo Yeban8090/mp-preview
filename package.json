@@ -1,6 +1,6 @@
 {
   "name": "mp-preview",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "一键将 Markdown 文档转换为微信公众号格式",
   "main": "main.js",
   "scripts": {
